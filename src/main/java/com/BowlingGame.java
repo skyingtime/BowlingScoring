@@ -6,7 +6,7 @@ package com;
 public class BowlingGame {
     private static final int MAX_FRAME = 10;
     private static final int MAX_PIN = 10;
-    int rolls[] = new int[20];
+    int rolls[] = new int[22];
     int currentRoll = 0;
 
     public void roll(int noOfPins) {
@@ -20,7 +20,17 @@ public class BowlingGame {
         int score = 0;
         for(int frame = 1; frame <= MAX_FRAME; frame++) {
             if(isStrike(frame)) {
-                //score += TBC
+                if(isStrike(frame+1)) {
+                    if(frame == MAX_FRAME) {
+                        score += MAX_PIN*2 + rolls[frameSecondRollNumber(frame+1)];
+                    }
+                    else {
+                        score += MAX_PIN*2 + rolls[frameFirstRollNumber(frame+2)];
+                    }
+                }
+                else {
+                    score += MAX_PIN+ rolls[frameFirstRollNumber(frame+1)] + rolls[frameSecondRollNumber(frame+1)];
+                }
             }
             else if(isSpare(frame)) {
                 score += MAX_PIN + rolls[frameFirstRollNumber(frame+1)];
