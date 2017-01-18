@@ -1,7 +1,7 @@
 package com;
 
 /**
- * Created by yangliu on 17/01/2017.
+ * Created by yangliu on 18/01/2017.
  */
 public class BowlingGame {
     private static final int MAX_FRAME = 10;
@@ -14,9 +14,6 @@ public class BowlingGame {
     }
 
     public int score() {
-//        for(int i = 0; i < rolls.length; i++)
-//        System.out.print("i: " + i + "(" + rolls[i] + ") ");
-
         int score = 0;
         for(int frame = 1; frame <= MAX_FRAME; frame++) {
             if(isStrike(frame)) {
