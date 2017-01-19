@@ -6,8 +6,8 @@ package com;
 public class BowlingGame {
     private static final int MAX_FRAME = 10;
     private static final int MAX_PIN = 10;
-    int rolls[] = new int[22];
-    int currentRoll = 0;
+    private int rolls[] = new int[22];
+    private int currentRoll = 0;
 
     public void roll(int noOfPins) {
         rolls[currentRoll++] = noOfPins;
